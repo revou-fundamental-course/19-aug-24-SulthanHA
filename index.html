@@ -2,46 +2,64 @@
      <html lang="en">
      <head>
         <meta charset="UTF-8">
-        <!-- <meta name="viewport" content="width= , initial-scale=1.0"> -->
+        <meta name="viewport" content="width= , initial-scale=1.0">
         <title>Document</title>
         <link rel = "stylesheet" href="css/styles.css">
      </head>
 
      <body> 
-        <nav>
-              <header>  
-               <div class= "logo-icon">
-           
-               </div>
 
-              </header>
+        <!-- Nav Bar -->
+      <nav class="nav">
+         <i class="uil uil-bars navOpenBtn"></i>
+         <div class= "logo-icon">
+         </div>
 
-              <Section class="nav-container"> 
-                 <a href="#our-home" class="nav-item">Home</a>
-                 <a href="#our-profile" class="nav-item">Our Profile</a>
-                 <a href="#" class="nav-item">Achivement</a> 
-                 <a href="#" class="nav-item">Message</a>
-              </Section>
+   
+         <ul class="nav-links">
+           <i class="uil uil-times navCloseBtn"></i>
+           <li><a href="#our-home">Home</a></li>
+           <li><a href="#our-profile">Our Profile</a></li>
+           <li><a href="#massage-us">Message Us</a></li>
+         </ul>
+   
+         <i class="uil uil-search search-icon" id="searchIcon"></i>
+         <div class="search-box">
+           <i class="uil uil-search search-icon"></i>
+           <input type="text" placeholder="Search here..." />
+         </div>
+       </nav>
 
-        </nav>
+       <h1>Selamat Datang di Website Kami!</h1>
+       <p id="welcomeMessage">Selamat datang diwebsite kami.</p>
+   
+       <script>
+           // Meminta pengguna untuk memasukkan nama mereka
+           var nama = prompt("Siapa nama Anda ?");
+   
+           // Jika nama tidak kosong atau null, tampilkan sambutan dengan nama
+           if(nama) {
+               alert("Selamat Datang, " + nama + "!");
+               document.getElementById("welcomeMessage").textContent ="Hallo " + nama + ", Welcome To Our Website !";
+           } else {
+               alert("Selamat Datang di Website Kami!");
+           }
+       </script>
 
         <hr />
-
+        
+        <!--Banner Autoslide-->
         <main>
-              <article id="our-home">
-                  <header>
-                     <h1> Welcome User, To Our Website</h1>
-                  </header>
-
-                  <p> Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-
+              <article id="our-home" class="our-home">
+                  
+  <br>
+            
                   <div class="banner-img img-1"> </div>
                   <div class="banner-img img-2"> </div>
                   <div class="banner-img img-3"> </div>
 
-
               </article>
-
+   <br>
       <hr />
 
        <section id="our-profile">
@@ -51,43 +69,79 @@
 
               <section class="profile-container">
                   <div class="profile-item">
-                     <div class="profile-image"></div>
+                     <div class="profile-image ban-1"></div>
 
-                      <h2>Software Engineer</h2>
+                      <h2>AI</h2>
                    </div>
 
                    <div class="profile-item">
-                     <div class="profile-image"></div>
+                     <div class="profile-image ban-2"></div>
 
-                      <h2>Software Engineer</h2>
+                      <h2>Cyber Security</h2>
                    </div>
 
                    <div class="profile-item">
-                     <div class="profile-image"></div>
+                     <div class="profile-image ban-3"></div>
 
-                      <h2>Software Engineer</h2>
+                      <h2>IOT</h2>
                    </div>
               </section>
        </section>
-              
+       <hr />
        <section>
-         <header> 
-            <h1> Massage Us</h1>
-         </header>
+       
+<!-- Massage Us -->
+<section  id="massage-us" class="MassageUS_Container">
+   <form class="form_MassageUS">
+       <h1>Message Us</h1>
+       <div class="Form_row">
+           <div class="row_label">
+               <label class="Label_standard" for="input_name">Nama</label>
+           </div>
+           <div class="row_input">
+               <a>:</a>
+               <input class="input_standar" type="text" name="input_name" id="input-name" placeholder="name"/>
+           </div>
+       </div>
 
-         <form>
-            <div>
-                <label for="name">Name</label><input id="name" />
-             </div>
-             <button type="button" onclick ="formValidation()">Submit</button>
-         </form>
+       <div class="Form_row">
+           <div class="row_label">
+               <label class="Label_standard" for="input-Date">Tanggal Lahir</label>
+           </div>
+           <div class="row_input">
+               <a>:</a>
+               <input class="input_standar" type="date" name="input_Date" id="input-Date" placeholder="date"/>
+           </div>
+       </div>
 
-             <div>
-               result: <span id ="result"></span>
-             </div>
+       <div class="Form_row">
+           <div class="row_label">
+               <Label class="Label_standard" for="input-gender">Jenis Kelamin</Label>
+           </div>
+           <div class="row_input">
+               <a>:</a>
+               <input type="radio" name="input_gender" value="Laki-Laki" unchecked/> Laki-Laki
+               <input type="radio" name="input_gender" value="Perempuan" unchecked/> Perempuan 
+           </div>
+       </div>
 
-             <button type="button" onclick ="nextSlide(1)">Next Slide</button>
-       </section>
+       <div class="Form_row">
+           <div class="row_label">
+               <label class="Label_standard" for="input-Pesan">Pesan</label>
+           </div>
+           <div class="row_input">
+               <textarea class="input_standar" name="input-Pesan" id="input-Pesan" rows="4" cols="23" placeholder="pesan"></textarea>
+           </div>
+       </div>
+       <button type="button" class="Button_style">Submit</button>
+   </form>
+
+   <div class="comment_container center_display">
+       <h1>Message :</h1>
+
+   </div>
+</section>
+      </section>
 
 
       </main>
